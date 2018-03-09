@@ -9,19 +9,19 @@ simple application for oral language comprehension training
 + the user can sort the words using the arrows in the keyboard (arrow down selects first word, arrow up deselect, arrow right move selector (if no word is selected) or move selected word (if a word is selected).
 + the selector is a small hand above the word.
 + the hand can be closed when selecting (grabbing) a word, or open when empty.
-+ among the words, some words ARE NOT actally part of the sentence. Let's call these "false words".
-+ The ratio of false words to true words needs to be defined.
-+ An algorithm should pick the false words from a list of 5000 most frequent words in the target language.
-+ This algorithm (let's call it false-word-picker) needs to be defined, but a possible criteria is, it should pick words that are morphologically similar to some of the true words.
++ among the words, some words ARE NOT actally part of the sentence. Let's call these "trap words".
++ The ratio of trap words to true words needs to be defined.
++ An algorithm should pick the trap words from a list of 5000 most frequent words in the target language.
++ This algorithm (let's call it trap-word-picker) needs to be defined, but a possible criteria is, it should pick words that are morphologically similar to some of the true words.
 + User do not need to put the words in the "input box" as it happens in current version. Instead, the user can re-arrange words in the same box where they are, that is the "tokens box".
-+ The user will see a "bin" below the tokens box, where he or she will be able to discard the words considered false.
-+ After verifying the sentence, if it is wrong, two radio buttons will appear: "too easy" and "save it", "save it" is selected by default.
++ The user will see a "bin" below the tokens box, where he or she will be able to discard the words considered as trap-words.
++ After verifying the text, if it is wrong, two radio buttons will appear: "too easy" and "save it", "save it" is selected by default.
 + new images for the buttons
 + new design
 
 ## optional things to do
 + making the whole thing more OOP-ish?
-+ rewrite the whole thing with another language (Elixir, Rust...)
++ rewrite the whole thing with another language (Elixir, Rust...)?
 
 ## future things to do
 + a recommendation system algorithm will be in charge of picking the sentences for the right level of the user. But before that, we need a lot of sentences and a period of testing.
