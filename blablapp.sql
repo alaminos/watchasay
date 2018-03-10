@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost
--- Généré le :  Ven 09 Mars 2018 à 23:39
+-- Généré le :  Sam 10 Mars 2018 à 12:10
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.0.15
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `frases` (
   `id` int(12) NOT NULL,
+  `language_id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci NOT NULL,
   `source` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `recdate` datetime NOT NULL
@@ -37,20 +38,40 @@ CREATE TABLE `frases` (
 -- Contenu de la table `frases`
 --
 
-INSERT INTO `frases` (`id`, `text`, `source`, `recdate`) VALUES
-(1, 'Because someone is asking to write something without a context', 'interview1.ogg', '0000-00-00 00:00:00'),
-(3, 'And I hate remembering some data, and writing exams, we have storage devices for that.', 'inter1.ogg', '0000-00-00 00:00:00'),
-(4, 'So you did it alone and completed it?', 'inter2.ogg', '0000-00-00 00:00:00'),
-(5, 'I\'m okay with it', 'inter3.ogg', '0000-00-00 00:00:00'),
-(6, 'If you want me to give you this job, you\'ve got to take off your funky style dress.', 'inter4.ogg', '0000-00-00 00:00:00'),
-(7, 'Why did you write Java?', 'interview2.ogg', '0000-00-00 00:00:00'),
-(8, 'Your resume says that you are a Sun certified Java programmer.', 'interview3.ogg', '0000-00-00 00:00:00'),
-(9, 'Tell me something about yourself.', 'interview4.ogg', '0000-00-00 00:00:00'),
-(10, 'Take the marker and write something on the board.', 'interview5.ogg', '0000-00-00 00:00:00'),
-(11, 'I have done two major projects and I also hold internship in two reputed companies.', 'interview6.ogg', '0000-00-00 00:00:00'),
-(12, 'You\'re in the wrong place.', 'interview7.ogg', '0000-00-00 00:00:00'),
-(13, 'Sorry I thought you were an interviewer.', 'interview8.ogg', '0000-00-00 00:00:00'),
-(14, 'I didn\'t like sitting in the classroom and listening to boring classrooms.', 'interview9.ogg', '0000-00-00 00:00:00');
+INSERT INTO `frases` (`id`, `language_id`, `text`, `source`, `recdate`) VALUES
+(1, 3, 'Because someone is asking to write something without a context', 'interview1.ogg', '0000-00-00 00:00:00'),
+(3, 3, 'And I hate remembering some data, and writing exams, we have storage devices for that.', 'inter1.ogg', '0000-00-00 00:00:00'),
+(4, 3, 'So you did it alone and completed it?', 'inter2.ogg', '0000-00-00 00:00:00'),
+(5, 3, 'I\'m okay with it', 'inter3.ogg', '0000-00-00 00:00:00'),
+(6, 3, 'If you want me to give you this job, you\'ve got to take off your funky style dress.', 'inter4.ogg', '0000-00-00 00:00:00'),
+(7, 3, 'Why did you write Java?', 'interview2.ogg', '0000-00-00 00:00:00'),
+(8, 3, 'Your resume says that you are a Sun certified Java programmer.', 'interview3.ogg', '0000-00-00 00:00:00'),
+(9, 3, 'Tell me something about yourself.', 'interview4.ogg', '0000-00-00 00:00:00'),
+(10, 3, 'Take the marker and write something on the board.', 'interview5.ogg', '0000-00-00 00:00:00'),
+(11, 3, 'I have done two major projects and I also hold internship in two reputed companies.', 'interview6.ogg', '0000-00-00 00:00:00'),
+(12, 3, 'You\'re in the wrong place.', 'interview7.ogg', '0000-00-00 00:00:00'),
+(13, 3, 'Sorry I thought you were an interviewer.', 'interview8.ogg', '0000-00-00 00:00:00'),
+(14, 3, 'I didn\'t like sitting in the classroom and listening to boring classrooms.', 'interview9.ogg', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `languages`
+--
+
+CREATE TABLE `languages` (
+  `id` int(11) NOT NULL,
+  `code` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `languages`
+--
+
+INSERT INTO `languages` (`id`, `code`, `name`) VALUES
+(3, 'en', 'English'),
+(4, 'fr', 'Français');
 
 -- --------------------------------------------------------
 
@@ -94,6 +115,13 @@ CREATE TABLE `users_phrases` (
 -- Index pour la table `frases`
 --
 ALTER TABLE `frases`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `language_id` (`language_id`);
+
+--
+-- Index pour la table `languages`
+--
+ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -119,6 +147,11 @@ ALTER TABLE `users_phrases`
 ALTER TABLE `frases`
   MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
+-- AUTO_INCREMENT pour la table `languages`
+--
+ALTER TABLE `languages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
@@ -126,6 +159,12 @@ ALTER TABLE `users`
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `frases`
+--
+ALTER TABLE `frases`
+  ADD CONSTRAINT `frases_ibfk_1` FOREIGN KEY (`language_id`) REFERENCES `languages` (`id`);
 
 --
 -- Contraintes pour la table `users_phrases`
