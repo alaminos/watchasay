@@ -39,6 +39,8 @@ if( isset($_SESSION['user_id']) ) {
                     <li><a class="link_btn" href="login.php">Log in</a></li>
                     <li><a class="link_btn" href="signup.php">Sign up</a></li>
             <?php endif; ?>
+            <li class="divider"></li>
+            <li><a class="link_btn" href="#">Language : <!--[insert php here]--></a></li>
         </ul>
         
     </nav>

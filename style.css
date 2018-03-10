@@ -5,8 +5,8 @@
     --tokensBox-color: #86a5c0;
     --tokensBox-btn-color: #a6d5f0;
     --title-color: #645dd7;
-    --page-bg-color: #dfe9ddec;
-    --main-bg-color: #eff9bdec;
+    --page-bg-color: #86a5c0;
+    --main-bg-color: #dfe9ddec;
     --border-color: black;
     --a-hover-color: white;
     --a-clicked-color: black;
@@ -66,12 +66,26 @@ main {
     width: 100%;
     min-width: 200px;
     min-height: 300px;
+    border-radius: 15px;
 }
 
 .auth {
     text-align: center;
 }
 
+form input, form button {
+    background: var(--tokensBox-btn-color);
+    color: var(--a-color);
+    border-radius: 3px;
+}
+
+form input:hover, form button:hover {
+    color: var(--a-hover-color);
+}
+
+form input:focus, form button:focus {
+    color: var(--a-clicked-color);
+}
 
 /*------------NAV BAR -----------*/
 nav {
@@ -116,6 +130,11 @@ a:active {
     color: var(--a-clicked-color);
 }
 
+.divider {
+    flex: 1;
+    background: #00000000;
+}
+
 /*----------FOOTER-----------------*/
 footer {
     background-color: var(--tokensBox-color);
@@ -130,7 +149,7 @@ footer {
     width: 65%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+/*    justify-content: space-between;*/
 }
 
 /*------------BUTTONS---------------*/
@@ -138,12 +157,14 @@ footer {
     flex: 10%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 3px;
 }
 
 .btn {
     flex: 1;
     padding: 0;
     margin: 3px;
+    border: none;
     border-radius: 5px;
     background: var(--tokensBox-btn-color);
 }
@@ -174,24 +195,24 @@ footer {
 
 /*----------USER INPUT BOX-------------*/
 #userInputBox {
-    border: 1px solid var(--border-color);
-    border-radius: 3%;
+/*    border: 1px solid var(--border-color);*/
+    border-radius: 10px;
     padding: 2px;
     flex: 25%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     background: white;
+    margin-bottom: 6px;
 }
 
 /*-----------TOKENS BOX ------------*/
 #tokensBox {
     flex:40%;
     background-color: var(--tokensBox-color);
-    border-radius: 3%;
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5px;
 }
 
 .token {
