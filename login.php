@@ -31,27 +31,31 @@ endif;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     
-    <header>Bla-blapp</header>
-    
-    <p>
+    <nav>
+        <ul id="navbar">
+            <li><a class="link_btn" href="index.php">Watchasay</a></li>
+            <li><a class="link_btn" href="signup.php">or sign up here</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>
 
-    <?php  if (!empty($message)) { echo $message; }   ?>
-    
-    </p>
+        <?php  if (!empty($message)) { echo $message; }   ?>
+        
+        </p>
 
-    <h1>Login</h1>
-    <span>or <a href="signup.php">Sign up here.</a></span>
-
-    <form action="login.php" method="POST">
-        <input type="text" name="email" id="" placeholder="Your email">
-        <input type="password" name="password" placeholder="your password">
-        <button type="submit">Go</button>
-    </form>
+        <h1>Login</h1>
+        <form action="login.php" method="POST">
+            <input type="text" name="email" id="" placeholder="Your email">
+            <input type="password" name="password" placeholder="your password">
+            <button type="submit">Go</button>
+        </form>
+    </main>
 
 </body>
 </html>

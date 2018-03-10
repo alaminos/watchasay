@@ -38,7 +38,7 @@ endif;
     <title>New user</title>
 </head>
 <body>
-    <main>
+    <nav>
         <?php
             /*previous verion -- left for the record
             
@@ -57,11 +57,13 @@ endif;
                     ));
                 } */
         ?>
-        <header> <a href="index.php">Watchasay</a></header>
-
+        <ul id="navbar">
+            <li><a class="link_btn" href="index.php">Watchasay</a></li>
+            <li><a class="link_btn" href="login.php">or login here</a></li>
+        </ul>
+    </nav>
+    <main>
         <h1>New user</h1>
-        <span>or <a href="login.php">login here</a></span>
-
         <form method="POST" action="signup.php"> 
             <input type="text" name="username" placeholder="your username">
             <input type="text" name="email" placeholder="email">

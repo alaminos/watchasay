@@ -23,7 +23,7 @@ if( isset($_SESSION['user_id']) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>WATCHASAY</title>
+    <title>Watchasay</title>
 </head>
 
 <body>
@@ -32,12 +32,12 @@ if( isset($_SESSION['user_id']) ) {
         <ul id="navbar">
         
             <?php if ( !empty($user) ) : ?>
-                <li>Welcome <span id="navbar-user-name-"><?= $user['username']; ?></span></li>
-                <li><a href="logout.php">Logout</a></li>    
+                <li><a class="link_btn" href="#">Welcome <span id="navbar-user-name-"><?= $user['username']; ?></span> !</a></li>
+                <li><a class="link_btn" href="logout.php">Logout</a></li>    
             <?php else : ?>
                 
-                    <li><a href="login.php">Log in</a></li>
-                    <li><a href="signup.php">Sign up</a></li>
+                    <li><a class="link_btn" href="login.php">Log in</a></li>
+                    <li><a class="link_btn" href="signup.php">Sign up</a></li>
             <?php endif; ?>
         </ul>
         
@@ -46,6 +46,7 @@ if( isset($_SESSION['user_id']) ) {
         
         
         <h1>WATCHASAY</h1>
+        <h2>The oral comprehension game</h2>
 <!-- *** *** *** *** *** GAME AREA *** *** *** *** *** -->
         <div id="gameArea">
             <div id="btnArea">
@@ -69,9 +70,9 @@ if( isset($_SESSION['user_id']) ) {
     <footer>
         <nav>
             <ul>
-                <li><a href="getusers.php">Get users</a></li>
-                <li><a href="newsentence.php">Add sentence</a></li>
-                <li><a href="meta.html">Meta</a></li>
+                <li><a class="link_btn" href="getUsers.php">Get users</a></li>
+                <li><a class="link_btn" href="newSentence.php">Add sentence</a></li>
+                <li><a class="link_btn" href="meta.html">Meta</a></li>
             </ul>
         </nav>
     </footer>
