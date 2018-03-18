@@ -3,14 +3,15 @@
     --txt-color: #444;
     --text-color: #643173;
     --tokensBox-color: #86a5c0;
-    --tokensBox-btn-color: #a6d5f0;
+    --background-color: #FFF;
+    --link-btn-color: #e35323;
+    --btn-color: #a6d5f0;
     --title-color: #645dd7;
-    --page-bg-color: #86a5c0;
     --main-bg-color: #dfe9ddec;
     --border-color: black;
     --a-hover-color: white;
     --a-clicked-color: black;
-    --a-color: var(--title-color);
+    --a-color: blue;
 
     /*------TEXT--------*/
     --title-txt: 3rem;
@@ -40,7 +41,7 @@ h1 {
     font-size: var(--title-txt);
     margin: 0 auto;
     text-align: center;
-    color:var(--title-color);
+    color: var(--title-color);
 }
 
 h2  {
@@ -51,7 +52,7 @@ h2  {
 }
 
 body {
-    background-color: var(--page-bg-color);
+    background-color: var(--background-color);
     display:flex;
     flex-direction: column;
     height: 100vh;
@@ -62,6 +63,8 @@ main {
     background: var(--main-bg-color);
     margin: 0;
     color: var(--txt-color);
+    display: flex;
+    flex-direction: column;
     flex: 80%;
     width: 100%;
     min-width: 200px;
@@ -69,12 +72,16 @@ main {
     border-radius: 15px;
 }
 
+.main_divider {
+    height: 5%;
+}
+
 .auth {
     text-align: center;
 }
 
-form input, form button {
-    background: var(--tokensBox-btn-color);
+form input, form button, form textarea {
+    background: var(--btn-color);
     color: var(--a-color);
     border-radius: 3px;
 }
@@ -90,7 +97,7 @@ form input:focus, form button:focus {
 /*------------NAV BAR -----------*/
 nav {
     flex: 10%;
-    background-color: var(--tokensBox-color);
+    background-color: var(--background-color);
 }
 
 ul {
@@ -102,7 +109,7 @@ ul {
 }
 
 li {
-    background: var(--tokensBox-btn-color);
+    background: var(--link-btn-color);
     text-align: center;
     border-radius: 5px;
     margin-left: 6px;
@@ -137,7 +144,7 @@ a:active {
 
 /*----------FOOTER-----------------*/
 footer {
-    background-color: var(--tokensBox-color);
+    background-color: var(--background-color);
     font-size: var(--small-txt);
     flex: 10%;
 }
@@ -149,7 +156,7 @@ footer {
     width: 65%;
     display: flex;
     flex-direction: column;
-/*    justify-content: space-between;*/
+    justify-content: space-between;
 }
 
 /*------------BUTTONS---------------*/
@@ -164,9 +171,9 @@ footer {
     flex: 1;
     padding: 0;
     margin: 3px;
-    border: none;
     border-radius: 5px;
-    background: var(--tokensBox-btn-color);
+    border: none;
+    background: var(--btn-color);
 }
 .btn:hover {
     background: white;
@@ -258,4 +265,21 @@ body {
     margin: 0 auto;
 }
 
+}
+
+/*--------------NEW SENTENCE-------------*/
+
+.usr_input {
+    background-color: var(--tokensBox-color);
+    border-radius: 5px;
+    padding: 10px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.usr_input * {
+    align-self: center;
+    font-size: var(--small-txt);
 }
