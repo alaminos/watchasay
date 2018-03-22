@@ -74,7 +74,6 @@ if( isset($_SESSION['user_id']) ) {
             <ul>
                 <li><a class="link_btn" href="getUsers.php">Get users</a></li>
                 <li><a class="link_btn" href="newSentence.php">Add sentence</a></li>
-                <li><a class="link_btn" href="meta.html">Meta</a></li>
                 <li class="divider"></li>
                 <li><a class="link_btn" href="#">Highscores</a>
             </ul>
