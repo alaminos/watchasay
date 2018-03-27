@@ -31,26 +31,29 @@
         <h1>WATCHASAY users</h1>
         <h2>Admins only</h2>
 <!-- *** *** *** *** *** TABLE AREA *** *** *** *** *** -->
-	<?php
+        <div class="main_divider"></div>
+        <div class="users">
+        	<?php
+                require_once('pdo.php');
 
-		require_once('pdo.php');
-
-		$stmt = $pdo->query("SELECT * FROM users");
-		echo '<table border="1">'. "\n";
-		while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
-		    echo "<tr><td>";
-		    echo( $row['username'] );
-		    echo "</td><td>";
-		    echo( $row['email'] );
-		    echo "</td></tr>\n";
-		}
-		echo "</table>\n";
-		/*
-		<table border="1">
-		<tr><td>Johnny</td><td>johnny86@wahoo.com</td><td>123</td></tr>
-		...
-		</table>*/
-	?>
+		        $stmt = $pdo->query("SELECT * FROM users");
+		        echo '<table border="1">'. "\n";
+		        while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
+		            echo "<tr><td>";
+		            echo( $row['username'] );
+		            echo "</td><td>";
+		            echo( $row['email'] );
+		            echo "</td></tr>\n";
+		        }
+		        echo "</table>\n";
+		        /*
+		        <table border="1">
+		        <tr><td>Johnny</td><td>johnny86@wahoo.com</td><td>123</td></tr>
+		        ...
+		        </table>*/
+	        ?>
+        </div>
+        <div class="main_divider"></div>
     </main>
 <!-- *** *** *** *** *** FOOTER *** *** *** *** *** -->
     <footer>

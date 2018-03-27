@@ -172,11 +172,16 @@ footer {
     padding: 0;
     margin: 3px;
     border-radius: 5px;
-    border: none;
+    border: 2px solid var(--btn-color);
     background: var(--btn-color);
 }
 .btn:hover {
     background: white;
+    border-style: outset;
+}
+.btn:active {
+    background: lightgray;
+    border-style: inset;
 }
 
 #btnHP {
@@ -202,7 +207,6 @@ footer {
 
 /*----------USER INPUT BOX-------------*/
 #userInputBox {
-/*    border: 1px solid var(--border-color);*/
     border-radius: 10px;
     padding: 2px;
     flex: 25%;
@@ -226,9 +230,12 @@ footer {
     font-size: var(--medium-txt);
     text-align: center;
     padding: 2px;
-/*    background-color: var(--tokensBox-color);*/
     margin: 2px;
     max-height: 2em;
+    border-radius: 3px;
+}
+.token:hover {
+    background: var(--link-btn-color);
 }
 
 
@@ -282,4 +289,20 @@ body {
 .usr_input * {
     align-self: center;
     font-size: var(--small-txt);
+}
+
+/*---------------GET USERS---------------*/
+
+.users {
+    background-color: var(--tokensBox-color);
+    border-radius: 5px;
+    padding: 10px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.users  {
+    align-self: center;
 }
